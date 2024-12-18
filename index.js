@@ -1,9 +1,14 @@
 
 const express=require("express");
 const app=express();
+const mongoose=require("mongoose")
 const stuRouter=require("./Route/StudentRouter");
-app.set("view engine" , "ejs")
 
+mongoose.connect("mongodb://127.0.0.1:27017/laiba").then(()=>{
+    console.log("db connect")
+})
+
+app.set("view engine" , "ejs")
 app.use("/" ,stuRouter);
 
 

@@ -1,3 +1,4 @@
+
 const stuHome = (req, res) => {
     res.render("Home");
 }
